@@ -1,0 +1,29 @@
+﻿<Window x:Class="tusks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tusks"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="169*"/>
+        </Grid.RowDefinitions>
+        <ListBox BorderBrush="Black" BorderThickness="2" x:Name="tusklist" Margin="0,62,420,92" Background="BlanchedAlmond" Grid.RowSpan="2"/>
+        <Label BorderBrush="Black" BorderThickness="2" Content="LIST" HorizontalAlignment="Left" VerticalAlignment="Top"
+        Width="380" Height="62" FontSize="40" Background="BlanchedAlmond"
+        FontWeight="Black"
+               HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="tusks" Margin="380,67,0,101" Grid.RowSpan="2" />
+        <Button Click="show_Click" x:Name="show" Content="SHOW" FontSize="30" FontWeight="Black" HorizontalAlignment="Left" Margin="380,242,0,0" VerticalAlignment="Top" Width="420" Height="44" Grid.Row="1"/>
+        <Button Click="add_Click" x:Name="add" Content="ADD" FontSize="30" FontWeight="Black" HorizontalAlignment="Left" Margin="0,284,0,0" VerticalAlignment="Top" Width="380" Height="54" Grid.Row="1"/>
+        <Label BorderBrush="Black" BorderThickness="2" Content="TASKS" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Width="420" Height="62" FontSize="40" Background="GhostWhite"
+            FontWeight="Black"
+            HorizontalContentAlignment="Center" Margin="380,0,0,0"/>
+        <TextBox x:Name="new_tusk" Margin="0,242,420,54" Grid.Row="1"></TextBox>
+        <Button Click="write_Click"  x:Name="write" Content="WRITE" FontSize="30" FontWeight="Black" HorizontalAlignment="Left" Margin="380,291,0,0" VerticalAlignment="Top" Width="420" Height="44" Grid.Row="1"/>
+    </Grid>
+</Window>
