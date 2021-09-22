@@ -1,29 +1,74 @@
-﻿<Window x:Class="tusks.MainWindow"
+<Window x:Class="ToDo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:tusks"
+        xmlns:local="clr-namespace:ToDo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="48*"/>
-            <RowDefinition Height="169*"/>
-        </Grid.RowDefinitions>
-        <ListBox BorderBrush="Black" BorderThickness="2" x:Name="tusklist" Margin="0,62,420,92" Background="BlanchedAlmond" Grid.RowSpan="2"/>
-        <Label BorderBrush="Black" BorderThickness="2" Content="LIST" HorizontalAlignment="Left" VerticalAlignment="Top"
-        Width="380" Height="62" FontSize="40" Background="BlanchedAlmond"
-        FontWeight="Black"
-               HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="tusks" Margin="380,67,0,101" Grid.RowSpan="2" />
-        <Button Click="show_Click" x:Name="show" Content="SHOW" FontSize="30" FontWeight="Black" HorizontalAlignment="Left" Margin="380,242,0,0" VerticalAlignment="Top" Width="420" Height="44" Grid.Row="1"/>
-        <Button Click="add_Click" x:Name="add" Content="ADD" FontSize="30" FontWeight="Black" HorizontalAlignment="Left" Margin="0,284,0,0" VerticalAlignment="Top" Width="380" Height="54" Grid.Row="1"/>
-        <Label BorderBrush="Black" BorderThickness="2" Content="TASKS" HorizontalAlignment="Left" VerticalAlignment="Top"
-            Width="420" Height="62" FontSize="40" Background="GhostWhite"
-            FontWeight="Black"
-            HorizontalContentAlignment="Center" Margin="380,0,0,0"/>
-        <TextBox x:Name="new_tusk" Margin="0,242,420,54" Grid.Row="1"></TextBox>
-        <Button Click="write_Click"  x:Name="write" Content="WRITE" FontSize="30" FontWeight="Black" HorizontalAlignment="Left" Margin="380,291,0,0" VerticalAlignment="Top" Width="420" Height="44" Grid.Row="1"/>
-    </Grid>
+        Title="MainWindow" Height="550" Width="320">
+    <StackPanel>
+
+        <StackPanel Orientation="Horizontal" x:Name="back"  >
+            <Button x:Name="backButton" Click="backButton_Click" Width="50" Background="Transparent" BorderThickness="0">
+                <Image Source="/left.png" Width="40" Height="30" />
+            </Button>
+            <Label Width="250" Content="ToDo" FontSize="25" FontWeight="Black"
+                   HorizontalContentAlignment="Center" 
+                   ></Label>
+        </StackPanel>
+
+
+        <StackPanel x:Name="start">
+            
+           <ListBox BorderThickness="0" Height="120" x:Name="listboxTask"
+                    MouseDoubleClick="listboxTask_MouseDoubleClick"/>
+            <StackPanel x:Name="todoContentAll">
+            <TextBox BorderThickness="0" Height="120" x:Name="todoContent"  />
+                
+                <DatePicker />
+                
+                
+             
+                <StackPanel x:Name="savestack" Orientation="Horizontal" FlowDirection="RightToLeft">
+                    <Button x:Name="save" Click="save_Click"  Width="50" Background="Transparent" BorderThickness="0">
+                        <Image Source="/save-file.png"  Width="32" Height="32" />
+                    </Button>
+                </StackPanel>
+                
+                
+                
+                
+            </StackPanel>
+
+        
+
+        <StackPanel Orientation="Horizontal">
+
+                <Button x:Name="delete" Click="delete_Click" Width="50" Background="Transparent" BorderThickness="0">
+                    <Image Source="/remove.png" Width="32" Height="32" />
+                </Button>
+
+
+                <Label Width="200"></Label>
+            <Button x:Name="Create_new_list" Click="new_Click" Width="50" Background="Transparent" BorderThickness="0">
+                <Image Source="/plus.png" Width="32" Height="32" />
+            </Button>
+            </StackPanel>
+        </StackPanel>
+        <!-- <Button Content="Add task" x:Name="add" Click="add_Click"/> -->
+        
+        <StackPanel Orientation="Horizontal" x:Name="create">
+            <TextBox Width="250" x:Name="newTask"></TextBox>
+           
+
+
+
+            <Button x:Name="ok" Click="ok_Click" Width="50" Background="Transparent" BorderThickness="0">
+                <Image Source="/ok.png" Width="32" Height="32" />
+            </Button>
+
+
+        </StackPanel>
+
+    </StackPanel>
 </Window>
